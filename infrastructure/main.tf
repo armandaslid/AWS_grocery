@@ -1,0 +1,13 @@
+# main.tf
+provider "aws" {
+    region = "eu-central-1"
+}
+
+resource "aws_instance" "web" {
+    ami           = "ami-06ee6255945a96aba"
+    instance_type = "t2.micro"
+
+tags = {
+    Name = "grocerymate-ec2"
+    }
+}
